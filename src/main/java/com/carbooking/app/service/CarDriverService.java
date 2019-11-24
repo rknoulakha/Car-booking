@@ -26,16 +26,15 @@ public class CarDriverService {
 
 	public CarDriverEntity createCarDriversInfo(CarDriverEntity entity) throws Exception {
 		List<CarDriverEntity> carEntity = null;
-		/*
-		 * carEntity = repository.findDriverDetailsByCarId(entity.getCarId()); if (null
-		 * != carEntity && carEntity.size()>0) { throw new
-		 * Exception("Car is already associated with driver: "); } else {
-		 */
+		  carEntity = repository.findDriverDetailsByCarId(entity.getCarId()); 
+		  if (null != carEntity && carEntity.size()>0) 
+		  { throw new Exception("Car is already associated with driver: ");
+		  } else {
 		carEntity = repository.findCarDetailsByDriverId(entity.getDriverId());
 		if (null != carEntity && carEntity.size() > 0) {
 			throw new Exception("Driver is already associated with car: ");
 		}
-		// }
+		}
 		entity = repository.save(entity);
 		return entity;
 	}

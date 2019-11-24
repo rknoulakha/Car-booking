@@ -12,7 +12,7 @@ import com.carbooking.app.model.CarDriverEntity;
 public interface CarDriverRepository extends JpaRepository<CarDriverEntity, Long> {
 
 	@Query(value = "SELECT * FROM TBL_CARS_DRIVERS u WHERE u.car_id = :car_id", nativeQuery = true)
-	List<CarDriverEntity> findDriverDetailsByCarId(String car_id);
+	List<CarDriverEntity> findDriverDetailsByCarId(Long car_id);
 
 	@Query(value = "SELECT * FROM TBL_CARS_DRIVERS u WHERE u.driver_id = :driver_id", nativeQuery = true)
 	List<CarDriverEntity> findCarDetailsByDriverId(Long driver_id);
