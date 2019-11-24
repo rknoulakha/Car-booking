@@ -1,0 +1,46 @@
+## List of end points :
+
+http://localhost:8081/h2 - H2 Databaase Login (Create D:/data/sample in your machine mention in application.properties file)
+
+http://localhost:8081/cars - getAllCars
+http://localhost:8081/cars/1 - getCarById
+http://localhost:8081/cars/1 - deleteCarById
+http://localhost:8081/cars - createOrUpdateEmployee
+
+payload request 
+
+	{
+        "id": 5,
+        "carNumber": "MH12NV-8369",
+        "carModel": "Zipsy"
+	}
+
+
+http://localhost:8081/drivers - getAllDrivers
+http://localhost:8081/drivers/1 - getDriverById
+http://localhost:8081/drivers/1 - deleteDriverById
+http://localhost:8081/drivers - createOrUpdateDriver
+ 
+payload request
+
+ 	{
+        "id": 1,
+        "driverName": "Yogesh",
+        "driverMob": "9025784454",
+        "driverEmail": "yogesh12@gmail.com"
+	}
+
+http://localhost:8081/car-driver - associate car id with driver id
+payload request
+
+{
+        "id" : "1",
+        "carId": "2",
+        "driverId": "2"
+}	
+	
+	
+http://localhost:8081/car-driver/car-details - List of drivers along with their car details	
+
+http://localhost:8081/car-driver/avail-drivers - List of available drivers
+	
